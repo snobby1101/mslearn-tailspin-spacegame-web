@@ -4,11 +4,11 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
+batch: true
 - main
 
 pool:
   vmImage: ubuntu-latest
-  demands: Limit -equals DisAbleParallel
 
 variables:
   buildConfiguration: 'Release'
