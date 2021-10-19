@@ -3,9 +3,16 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+# trigger:
+# batch: true
+# - main
+
+# specific branch build with batching
 trigger:
-batch: true
-- main
+  batch: true
+  branches:
+    include:
+    - main
 
 pool:
   vmImage: ubuntu-latest
